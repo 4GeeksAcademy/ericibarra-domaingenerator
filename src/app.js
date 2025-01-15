@@ -1,31 +1,39 @@
+/* eslint-disable */
+import "bootstrap";
+import "./style.css";
 
-let pronoun = ['the', 'our'];
-let adj = ['great', 'big'];
-let noun = ['jogger', 'racoon'];
-let domain = ['.com', '.es'];
+import "./assets/img/rigo-baby.jpg";
+import "./assets/img/4geeks.ico";
 
-let result = [];
+window.onload = function() {
+  //write your code here
+  let pronoun = ["the", "our"];
+  let adj = ["great", "big"];
+  let noun = ["jogger", "racoon"];
+  let domain = [".com", ".es"];
 
-for (let i = 0; i < pronoun.length; i++){
+  let result = [];
 
-  for (let j = 0; j < adj.length; j++){
-
-    for (let k = 0; k < noun.length; k++){
-
-      for (let l = 0; l < domain.length; l++){
-
-        result.push(pronoun[i] + adj[j] + noun[k] + domain[l]);
-
+  for (let i = 0; i < pronoun.length; i++) {
+    for (let j = 0; j < adj.length; j++) {
+      for (let k = 0; k < noun.length; k++) {
+        for (let l = 0; l < domain.length; l++) {
+          result.push(pronoun[i] + adj[j] + noun[k] + domain[l]);
+        }
       }
-
     }
-
   }
 
-}
+  for (let i = 0; i < result.length; i++) {
+    console.log(result[i]);
+  }
 
-for(let i = 0; i < result.length; i++){
+  let newList = "<ul>";
 
-  console.log(result[i]);
+  for (let i = 0; i < result.length; i++) {
+    newList += "<li>" + result[i] + "<li>";
+  }
+  newList += "</ul>";
 
-}
+  document.getElementById("excuse").innerHTML = newList;
+};
